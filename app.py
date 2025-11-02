@@ -41,19 +41,6 @@ try:
 
     st.markdown("---")
     
-    # ==========================================================
-    # BAGIAN 3: GRAFIK DATA (DIPINDAHKAN KE ATAS)
-    # ==========================================================
-    st.header("📊 Grafik Data Historis NO2")
-    st.write("Grafik ini menunjukkan data historis yang digunakan untuk melatih semua model prediksi di bawah.")
-    
-    chart_data = data.set_index('date')['NO2']
-    st.line_chart(chart_data)
-
-    if st.checkbox("Tampilkan data historis mentah"):
-        st.dataframe(data)
-
-    st.markdown("---")
 
     # ==========================================================
     # BAGIAN 1: PREDIKSI OTOMATIS (Gresik)
@@ -84,6 +71,20 @@ try:
             st.write("**Data Input yang Digunakan:**")
             st.dataframe(input_df.style.format("{:.8f}"))
 
+
+    st.markdown("---")
+
+    # ==========================================================
+    # BAGIAN 3: GRAFIK DATA (DIPINDAHKAN KE ATAS)
+    # ==========================================================
+    st.header("📊 Grafik Data Historis NO2")
+    st.write("Grafik ini menunjukkan data historis yang digunakan untuk melatih semua model prediksi di bawah.")
+    
+    chart_data = data.set_index('date')['NO2']
+    st.line_chart(chart_data)
+
+    if st.checkbox("Tampilkan data historis mentah"):
+        st.dataframe(data)
 
     st.markdown("---")
 
